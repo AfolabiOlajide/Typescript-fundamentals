@@ -16,7 +16,9 @@ const addOrConcat = (a: number, b: number, c: "add" | "concat"): number | string
 }
 
 let myVal: string = addOrConcat(2, 2, "concat") as string;
-let nextVal: number = addOrConcat(2, 2, "concat") as number;
+let nextVal: number = addOrConcat(2, 2, "concat") as number; // when whe do type assertions or casting we are actually telling typescript we know more than 
+                                                            // it, but most times we might make mistakes as we have inferred the wront return type here.
+                                                            // So we need to be careful.
 
 // 10 as string // typescript not happy with the typescast
 (10 as unknown) as string // using unknown for double casting
